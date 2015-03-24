@@ -10,15 +10,11 @@ end
 
 # paragraphs run sentences *5 and push each sentence into an array, pages *25, join the sentences with paragraph tags
 def randsentences
-  @choice = nil
   if @sentences > @paragraphs && @sentences > @pages
-    @choice = "sentences"
   elsif @paragraphs > @sentences && @paragraphs > @pages
-    @sentences = @paragraphs*5
-    @choice = "paragraphs"
+    @sentences = @paragraphs*15
   elsif @pages > @sentences && @pages > @paragraphs
     @sentences = @pages*25
-    @choice = "pages"
   end
 
   @sentences -= 1
