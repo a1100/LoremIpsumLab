@@ -1,4 +1,22 @@
-Randomly generated text:
+Randomly generated text: <br>
 
-<%= randsentences %>
+<% if @paragraphs > @sentences && @paragraphs > @pages %>
+    <% @paragraphs.times do %>
+        <p>
+          <%= randsentences %>
+        </p>
+    <% end %>
+
+<% elsif @sentences > @paragraphs && @sentences > @pages %>
+    <%= randsentences %>
+    <% elsif @pages > @sentences && @pages > @paragraphs %>
+    <% (@pages*5).times do %>
+        <p>
+          <%= randsentences %>
+        </p>
+        <% end %>
+
+<% end %>
+
+
 
